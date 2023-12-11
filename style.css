@@ -1,1 +1,121 @@
+@font-face {
+    font-family: Whisper;
+    src: url(Whisper-Regular.ttf);
+}
+
+@font-face {
+    font-family: Redhat;
+    src: url(RedHatDisplay-VariableFont_wght.ttf);
+}
+
+* {
+    font-family: Redhat, Georgia, 'Times New Roman', Times, serif;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    
+}
+
+.main {
+    
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.sidebar {
+    background-image: url(toa-heftiba-a9pFSC8dTlo-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-size: cover;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo-box {
+    min-height: 100px;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    max-height: 50%;
+}
+
+.logo-title {
+    color: aliceblue;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 0.9;
+}
+
+.logo-name {
+    font-family: Whisper, Georgia, 'Times New Roman', Times, serif;
+    font-size: 4rem;
+}
+
+.attribution,
+.attribution a {
+    text-align: center;
+    color: aliceblue;
+    font-size: 0.8rem;
+}
+
+.content {
+    /* padding: 0 1rem; */
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    background-color: rgba(130,130,130,0.1);
+}
+
+.introduction,
+.form-submit,
+.form-call,
+.login
+ {
+    padding: 0 1rem;
+}
+
+
+.introduction {
+   font-size: 1.2rem;
+}
+
+.form-field {
+    
+}
+
+
+.form-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    justify-content: start ;
+    gap: 2rem;
+    background-color: white;
+    padding: 2rem 1rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: .1rem;
+    padding: 2px;
+}
+
+.form-submit {
+    margin: 5rem 1rem;
+}
 
