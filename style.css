@@ -20,47 +20,50 @@ body {
 }
 
 .main {
-    
+   
     height: 100%;
     display: flex;
-    align-items: stretch;
-    justify-content: space-between;
+    justify-content: stretch;
 }
 
 .sidebar {
+    height: 100vh;
     background-image: url(toa-heftiba-a9pFSC8dTlo-unsplash.jpg);
     background-repeat: no-repeat;
     background-origin: border-box;
     background-size: cover;
-    
+    min-width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .logo-box {
-    min-height: 100px;
+    min-height: 120px;
     background-color: rgba(0,0,0,0.4);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 1px;
     gap: 1rem;
 }
 
 .logo {
-    max-height: 50%;
+    max-width: 110px;
 }
 
 .logo-title {
     color: aliceblue;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: center;
     line-height: 0.9;
 }
 
 .logo-name {
     font-family: Whisper, Georgia, 'Times New Roman', Times, serif;
-    font-size: 4rem;
+    font-size: 3.8rem;
+    
 }
 
 .attribution,
@@ -71,30 +74,45 @@ body {
 }
 
 .content {
-    /* padding: 0 1rem; */
-    flex-grow: 2;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     background-color: rgba(130,130,130,0.1);
 }
 
 .introduction,
 .form-submit,
-.form-call,
-.login
+.login,
+.form-field
  {
     padding: 0 1rem;
 }
 
-
 .introduction {
-   font-size: 1.2rem;
+    
+}
+.introduction-text {
+ margin-top: 2rem;
+ font-size: 1.2rem;
+ line-height: 1.5rem;
+ 
 }
 
+@media screen and (max-width: 415px) {
+  .introduction-text {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    margin-top: 0;
+  }   
+}
+
+
 .form-field {
-    
+    background-color: white;
+    box-shadow: 0 5px 10px grey;
 }
 
 
@@ -103,9 +121,16 @@ body {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
     justify-content: start ;
-    gap: 2rem;
-    background-color: white;
-    padding: 2rem 1rem;
+    gap: 1rem 2rem;
+    padding-bottom: 2rem ;
+}
+
+@media screen and (max-width: 600px){
+    .form-grid {
+      gap: 1rem;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+    }  
 }
 
 .form-label {
@@ -116,6 +141,53 @@ body {
 }
 
 .form-submit {
-    margin: 5rem 1rem;
+    font-size: .9rem;
+    margin: 1rem 1rem;
+    width: 150px;
+    height: 35px;
+    color: aliceblue;
+    font-weight: bolder;
+    border-radius: 3px;
+    border: 2px solid rgb(113, 189, 189);
+    background-color: rgb(113, 189, 189);
 }
 
+.form-submit:hover {
+    box-shadow: 0 2px 5px darkcyan;
+}
+
+.login{
+    padding-bottom: 1rem;
+}
+
+.login a {
+    color: black;
+}
+
+
+.login a:hover::after {
+    display: inline-block;
+    content: ">>>";
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding-left: 0.4rem;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 550px){
+    .login a {
+      display: block;
+    }  
+}
+
+
+.form-input {
+    appearance: none;
+    border: 1px solid darkcyan;
+    border-radius: 2px;
+}
+
+.form-input:invalid {
+    background-color: brown;
+    border-color: brown;
+}
