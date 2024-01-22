@@ -35,7 +35,7 @@
                     physical therapy is designed to address chronic pain<br>
                     and help recover from injuries and surgery.<br>
                     <br>
-                    Start your journey to a more active, fulfilling lifestyle today!
+                    Start your journey to a more active lifestyle today!
                 </p>
 
             </div>
@@ -44,27 +44,27 @@
                 <div class="form-grid">
                     <div class="form-member">
                         <label class="form-label" for="first-name">FIRST NAME</label>
-                        <input class="form-input" type="text" name="name" id="first-name">
+                        <input required class="form-input" type="text" name="name" id="first-name" placeholder="">
                     </div>
                     <div class="form-member">
                         <label class="form-label" for="last-name">LAST NAME</label>
-                        <input class="form-input" type="text" name="surname" id="last-name">
+                        <input class="form-input" type="text" name="surname" id="last-name" placeholder="">
                     </div>
                     <div class="form-member">
                         <label class="form-label" for="email">EMAIL</label>
-                        <input class="form-input" type="email" name="email" id="email">
+                        <input required class="form-input" type="email" name="email" id="email" placeholder="">
                     </div>
                     <div class="form-member">
                         <label class="form-label" for="phone-number">PHONE NUMBER</label>
-                        <input class="form-input" type="tel" name="phone" id="phone-number">
+                        <input class="form-input" type="tel" name="phone" id="phone-number" placeholder="">
                     </div>
                     <div class="form-member">
                         <label class="form-label" for="pass">PASSWORD</label>
-                        <input class="form-input" type="password" name="password" id="pass">
+                        <input required class="form-input" type="password" name="password" id="pass" placeholder="">
                     </div>
                     <div class="form-member">
                         <label class="form-label" for="pass-confirm">CONFIRM PASSWORD</label>
-                        <input class="form-input" type="password" name="passwordConfirm" id="pass-confirm">
+                        <input oninput="return validatePassword()" required class="form-input" type="password" name="passwordConfirm" id="pass-confirm" placeholder="">
                     </div>
                 </div>
                 
@@ -73,5 +73,20 @@
             <div class="login">Already have an account? <a href="">Log in</a></div>
         </div>
     </main>
+    <script>
+
+    function validatePassword() {
+        let passA = document.forms[0].password;
+        let passB = document.forms[0].passwordConfirm;
+
+        if ( passA.value != passB.value ){
+            passB.setCustomValidity('The passwords must match!');
+            return false;
+        } else {
+            passB.setCustomValidity('');
+            return true;
+        }
+    };    
+    </script>  
 </body>
 </html>
