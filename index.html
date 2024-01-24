@@ -60,11 +60,12 @@
                     </div>
                     <div class="form-member">
                         <label class="form-label" for="pass">PASSWORD</label>
-                        <input required class="form-input" type="password" name="password" id="pass" placeholder="">
+                        <input oninput="confirmMatch()" required class="error" type="password" name="password" id="pass" placeholder="">
                     </div>
                     <div class="form-member">
                         <label class="form-label" for="pass-confirm">CONFIRM PASSWORD</label>
-                        <input oninput="return validatePassword()" required class="form-input" type="password" name="passwordConfirm" id="pass-confirm" placeholder="">
+                        <input oninput="confirmMatch()" required class="error" type="password" name="passwordConfirm" id="pass-confirm" placeholder="">
+                        <div class="error-message">*Passwords do not match</div>
                     </div>
                 </div>
                 
@@ -74,19 +75,27 @@
         </div>
     </main>
     <script>
-
-    function validatePassword() {
+        function confirmMatch(){
         let passA = document.forms[0].password;
         let passB = document.forms[0].passwordConfirm;
+        let error = document.querySelector('.error-message');
 
-        if ( passA.value != passB.value ){
-            passB.setCustomValidity('The passwords must match!');
-            return false;
-        } else {
+        if(passA.value == passB.value){
+            passA.className = 'form-input';
+            passB.className = 'form-input';
+            error.textContent = '*Passwords match!';
+            error.style.color = "green";
+            passA.setCustomValidity('');
             passB.setCustomValidity('');
-            return true;
+        } else {
+            passA.className = 'error';
+            passB.className = 'error';
+            error.textContent = '*Passwords do not match!';
+            error.style.color = "red";
+            passA.setCustomValidity('Enter matching password!');
+            passB.setCustomValidity('Enter matching password!');
         }
-    };    
+        }
     </script>  
 </body>
 </html>
